@@ -22,8 +22,13 @@ test:
   database: dtl1_test
 
 production:
-  <<: *default
-  database: dtl1_production
+  adapter: postgresql
+  encoding: unicode
+  database: dtl_production
+  pool: 5
+  host: <%= ENV['DBHOST'] %>
+  username: <%= ENV['DBUSER'] %>
+  password: <%= ENV['DBPWD'] %>
 
 # farm:
 #   adapter: mysql2
