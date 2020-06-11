@@ -17,7 +17,7 @@ module Dtl1
         ENV[key.to_s] = value
       end if File.exists?(env_file)
     end
-    config.hosts << ENV['ALLOW_DOMAIN']
+    config.hosts << 'n.doublethinklab.org'
     # Settings in config/environments/* take precedence over those specified here.
     # Application configuration can go into files in config/initializers
     # -- all .rb files in that directory are automatically loaded after loading
