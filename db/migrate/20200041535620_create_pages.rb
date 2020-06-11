@@ -4,6 +4,7 @@ class CreatePages < ActiveRecord::Migration[6.0]
   def change
     create_table :pages do |t|
       t.uuid :uid
+      t.string :uname
       t.string :pid
       t.string :ptitle
       t.string :ptype
