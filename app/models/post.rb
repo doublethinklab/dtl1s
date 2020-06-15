@@ -290,7 +290,7 @@ class Post < ApplicationRecord
             )
         end
         # facebook video download
-        %x(cd '/Volumes/GoogleDrive/My Drive/_Movies/dtl/_facebook_watch'; youtube-dl --default-search "ytsearch" --write-info-json --all-subs --download-archive "../archive.txt" -o "../%(uploader)s/%(id)s_%(title)s.%(ext)s" #{link}}) if ((link =~ /facebook/) && (link =~ /videos/))
-        %x(cd '/Volumes/GoogleDrive/My Drive/_Movies/dtl/_youtube_watch'; youtube-dl --default-search "ytsearch" --write-info-json --all-subs --download-archive "../archive.txt" -o "../%(uploader)s/%(id)s_%(title)s.%(ext)s" #{link}) if ((link =~ /youtube.com|youtu.be/)) 
+        %x(cd '/Volumes/GoogleDrive/My Drive/_Movies/dtl/_facebook_watch'; youtube-dl --default-search "ytsearch" --write-info-json --all-subs --download-archive "archive.txt" -o "%(uploader)s/%(id)s_%(title)s.%(ext)s" #{link}}) if ((link =~ /facebook/) && (link =~ /videos/))
+        %x(cd '/Volumes/GoogleDrive/My Drive/_Movies/dtl/_youtube_watch'; youtube-dl --default-search "ytsearch" --write-info-json --all-subs --download-archive "archive.txt" -o "%(uploader)s/%(id)s_%(title)s.%(ext)s" #{link}) if ((link =~ /youtube.com|youtu.be/)) 
     end
 end
